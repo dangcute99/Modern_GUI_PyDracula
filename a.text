@@ -1,0 +1,1043 @@
+   icon = QIcon()
+        icon.addFile(u":/images/images/anh-cac-tram-removebg-preview.png", QSize(), QIcon.Normal, QIcon.On)
+        self.pushButton_17.setIcon(icon)
+        self.pushButton_17.setIconSize(QSize(100, 100))
+
+
+
+
+  self.pushButton_30.setSizePolicy(sizePolicy8)
+        self.pushButton_30.setStyleSheet(u"border:none;")
+        icon2 = QIcon()
+        icon2.addFile(u":/images/images/anh-cac-tram-removebg-preview.png", QSize(), QIcon.Normal, QIcon.Off)
+       
+        self.pushButton_30.setIcon(icon2)
+        self.pushButton_30.setIconSize(QSize(100, 100))
+
+
+if nhietdo_lower is not None and nhietdo_lower != 0:
+                    self.nhietdo_lower_tram45 = nhietdo_lower
+                    if self.nhietdo_lower_tram45 <= self.temperature <= self.nhietdo_high_tram45:
+                        common_style = "background-color: rgb(0, 170, 0);"
+                        bit_temp_a45 = 0
+                    else:
+                        common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                        bit_temp_a45 = 1
+                        bit_coi = 1
+                    # Áp dụng màu nút
+                    button_styles = {
+                        self.ui.pushButton_nhietdo_2: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_188: common_style,
+                    }
+                    self.apply_button_styles(button_styles)
+                else:
+                    # Không có dữ liệu nhiệt độ, mặc định nút cảnh báo là màu xanh
+                    common_style = "background-color: rgb(0, 170, 0);"
+                    bit_temp_a45 = 0
+
+                    # Áp dụng màu nút
+                    button_styles = {
+                        self.ui.pushButton_nhietdo_2: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_188: common_style,
+                    }
+                    self.apply_button_styles(button_styles)
+
+                if nhietdo_high is not None and nhietdo_high != 0:
+                            self.nhietdo_high_tram45 = nhietdo_high
+                            if self.nhietdo_lower_tram45 <= self.temperature <= self.nhietdo_high_tram45:
+                                common_style = "background-color: rgb(0, 170, 0);"  # Màu xanh
+                                bit_temp_a45 = 0
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                                bit_temp_a45 = 1
+                                bit_coi = 1
+
+                else:
+                    # Không có dữ liệu nhiệt độ, mặc định nút cảnh báo là màu xanh
+                    common_style = "background-color: rgb(0, 170, 0);"
+                    bit_temp_a45 = 0
+
+                # Áp dụng màu nút
+                button_styles = {
+                    self.ui.pushButton_nhietdo_2: common_style + " border-radius: 17px;",
+                    self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                    self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                    self.ui.pushButton_188: common_style,
+                }
+                self.apply_button_styles(button_styles)
+
+                if doam_low is not None and doam_low != 0  :
+                            self.doam_low_tram45 = doam_low
+                            if self.doam_low_tram45 <= self.humidity <= self.doam_high_tram45:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_humi_a45 = 0
+                               
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                                bit_humi_a45 = 1
+                                bit_coi = 1
+
+                            # Áp dụng màu nút
+                            button_styles = {
+                                self.ui.pushButton_doam_2: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_188: common_style ,
+                                }
+                            self.apply_button_styles(button_styles)          
+                    # Cập nhật ngưỡng nhiệt độ trên
+                if doam_high is not None and doam_high != 0:
+                    self.doam_high_tram45 = doam_high
+                    if self.doam_low_tram45 <= self.humidity <= self.doam_high_tram45:
+                        common_style = "background-color: rgb(0, 170, 0);"
+                        bit_humi_a45 = 0
+                       
+                    else:
+                        common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                        bit_humi_a45 = 1
+                        bit_coi = 1
+
+                    # Áp dụng màu nút
+                    button_styles = {
+                            self.ui.pushButton_doam_2: common_style + " border-radius: 17px;",
+                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                            self.ui.pushButton_188: common_style ,
+                        }
+                    self.apply_button_styles(button_styles)    
+                
+                if hasattr(self, 'voltage_dc1'):
+                    if dienap_low1 is not None and dienap_low1 != 0  :
+                                self.dienap_low1_tram45 = dienap_low1
+                                if self.dienap_low1_tram45 < self.voltage_dc1 <= self.dienap_high_tram45:
+                                    common_style = "background-color: rgb(0, 170, 0);"
+                                    bit_dc1_a45 = 0
+                                    
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                elif self.dienap_low_tram45 <= self.voltage_dc1 <= self.dienap_low1_tram45:
+                                    common_style = "background-color: rgb(255, 255, 0);"
+                                    bit_dc1_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                        self.ui.pushButton_188: "background-color: rgb(255, 0, 0);", 
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                    
+                                else:
+                                    common_style = "background-color: rgb(255, 0, 0);"
+                                    bit_dc1_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                if bit_coi == 1:
+                                        common_style ="background-color:rgb(255,0,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                            
+                                        }
+                                        self.apply_button_styles(button_styles)
+                                else:
+                                        common_style ="background-color:rgb(0,170,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        }
+                                        self.apply_button_styles(button_styles)
+                    if dienap_low is not None and dienap_low != 0:
+                                self.dienap_low_tram45 = dienap_low
+                                if self.dienap_low1_tram45 < self.voltage_dc1 <= self.dienap_high_tram45:
+                                    common_style = "background-color: rgb(0, 170, 0);"
+                                    bit_dc1_a45 = 0
+                                    
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                elif self.dienap_low_tram45 <= self.voltage_dc1 <= self.dienap_low1_tram45:
+                                    common_style = "background-color: rgb(255, 255, 0);"
+                                    bit_dc1_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                        self.ui.pushButton_188: "background-color: rgb(255, 0, 0);", 
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                    
+                                else:
+                                    common_style = "background-color: rgb(255, 0, 0);"
+                                    bit_dc1_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                if bit_coi == 1:
+                                        common_style ="background-color:rgb(255,0,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                            
+                                        }
+                                        self.apply_button_styles(button_styles)
+                                else:
+                                        common_style ="background-color:rgb(0,170,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        }
+                                        self.apply_button_styles(button_styles)
+                    if dienap_high is not None and dienap_high != 0:
+                            self.dienap_high_tram45 = dienap_high
+                            if self.dienap_low1_tram45 < self.voltage_dc1 <= self.dienap_high_tram45:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc1_a45 = 0
+                                
+                                button_styles = {
+                                    self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_188: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low_tram45 <= self.voltage_dc1 <= self.dienap_low1_tram45:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc1_a45 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_188: "background-color: rgb(255, 0, 0);", 
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc1_a45 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_188: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_188: common_style ,
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                            else:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_188: common_style ,
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                    }
+                                    self.apply_button_styles(button_styles)
+                if hasattr(self,"voltage_dc2"):                    
+                    if dienap_low1 is not None and dienap_low1 != 0  :
+                                self.dienap_low1_tram45 = dienap_low1
+                                if self.dienap_low1_tram45 < self.voltage_dc2 <= self.dienap_high_tram45:
+                                    common_style = "background-color: rgb(0, 170, 0);"
+                                    bit_dc2_a45 = 0
+                                   
+                                    button_styles = {
+                                        self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                elif self.dienap_low_tram45<= self.voltage_dc2 <= self.dienap_low1_tram45:
+                                    common_style = "background-color: rgb(255, 255, 0);"
+                                    bit_dc2_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                        self.ui.pushButton_188: "background-color: rgb(255, 0, 0);", 
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                    
+                                else:
+                                    common_style = "background-color: rgb(255, 0, 0);"
+                                    bit_dc2_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                if bit_coi == 1:
+                                        common_style ="background-color:rgb(255,0,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                            
+                                        }
+                                        self.apply_button_styles(button_styles)
+                                else:
+                                        common_style ="background-color:rgb(0,170,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        }
+                                        self.apply_button_styles(button_styles)
+                    if dienap_low is not None and dienap_low != 0:
+                                self.dienap_low_tram45 = dienap_low
+                                if self.dienap_low1_tram45 < self.voltage_dc2 <= self.dienap_high_tram45:
+                                    common_style = "background-color: rgb(0, 170, 0);"
+                                    bit_dc2_a45 = 0
+                                  
+                                    button_styles = {
+                                        self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                elif self.dienap_low_tram45 <= self.voltage_dc2 <= self.dienap_low1_tram45:
+                                    common_style = "background-color: rgb(255, 255, 0);"
+                                    bit_dc2_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                        self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                        self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                    
+                                else:
+                                    common_style = "background-color: rgb(255, 0, 0);"
+                                    bit_dc2_a45 = 1
+                                    bit_coi=1
+                                    button_styles = {
+                                        self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_188: common_style ,
+                                    
+                                    }
+                                    self.apply_button_styles(button_styles)
+                                if bit_coi == 1:
+                                        common_style ="background-color:rgb(255,0,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                            
+                                        }
+                                        self.apply_button_styles(button_styles)
+                                else:
+                                        common_style ="background-color:rgb(0,170,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        }
+                                        self.apply_button_styles(button_styles)
+                    if dienap_high is not None and dienap_high != 0:
+                            self.dienap_high_tram45 = dienap_high
+                            if self.dienap_low1_tram45 < self.voltage_dc2 <= self.dienap_high_tram45:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc2_a45 = 0
+                               
+                                button_styles = {
+                                    self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_188: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low_tram45 <= self.voltage_dc2 <= self.dienap_low1_tram45:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc2_a45 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_188: "background-color: rgb(255, 0, 0);", 
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc2_a45 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_188: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                        common_style ="background-color:rgb(255,0,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                            
+                                        }
+                                        self.apply_button_styles(button_styles)
+                            else:
+                                        common_style ="background-color:rgb(0,170,0);"
+                                        button_styles = {
+                                            self.ui.pushButton_188: common_style ,
+                                            self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+                                            self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+                                        }
+                                        self.apply_button_styles(button_styles)
+ 
+
+
+
+ ////////////////////////////////
+   if nhietdo_lower is not None and nhietdo_lower != 0  :
+                    self.nhietdo_lower = float(nhietdo_lower)
+                    if self.nhietdo_lower <= temperature <= self.nhietdo_high:
+                        common_style = "background-color: rgb(0, 170, 0);"
+                        bit_temp_a70 = 0
+                       
+                    else:
+                        common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                        bit_temp_a70 = 1
+                        bit_coi = 1
+                    # Áp dụng màu nút
+                    button_styles = {
+                        self.ui.pushButton_nhietdo: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                        self.ui.pushButton_186: common_style ,
+                    }
+                    self.apply_button_styles(button_styles)
+        # Cập nhật ngưỡng nhiệt độ trên
+            if nhietdo_high is not None and nhietdo_high != 0:
+                        self.nhietdo_high = nhietdo_high
+                        if self.nhietdo_lower <= temperature <= self.nhietdo_high:
+                            common_style = "background-color: rgb(0, 170, 0);"  # Màu xanh
+                            bit_temp_a70 = 0
+                        else:
+                            common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                            bit_temp_a70 = 1
+                            bit_coi = 1
+
+                        # Áp dụng màu nút
+                        button_styles = {
+                            self.ui.pushButton_nhietdo: common_style + " border-radius: 17px;",
+                            self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                            self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                            self.ui.pushButton_186: common_style ,
+                        }
+                        self.apply_button_styles(button_styles)
+            if doam_low is not None and doam_low != 0  :
+                        self.doam_low = doam_low
+                        if self.doam_low <= humidity <= self.doam_high:
+                            common_style = "background-color: rgb(0, 170, 0);"
+                            bit_humi_a70 = 0
+                           
+                        else:
+                            common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                            bit_humi_a70 = 1
+                            bit_coi = 1
+
+                        # Áp dụng màu nút
+                        button_styles = {
+                                self.ui.pushButton_doam: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            }
+                        self.apply_button_styles(button_styles)          
+            # Cập nhật ngưỡng nhiệt độ trên
+            if doam_high is not None and doam_high != 0:
+                        self.doam_high = doam_high
+                        if self.doam_low <= self.humidity <= self.doam_high:
+                            common_style = "background-color: rgb(0, 170, 0);"
+                            bit_humi_a70 = 0
+                           
+                        else:
+                            common_style = "background-color: rgb(255, 0, 0);"  # Màu đỏ
+                            bit_humi_a70 = 1
+                            bit_coi = 1
+
+                        # Áp dụng màu nút
+                        button_styles = {
+                                self.ui.pushButton_doam: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            }
+                        self.apply_button_styles(button_styles)          
+            # Kiểm tra và cập nhật ngưỡng nhiệt độ
+            if hasattr(self, 'voltage_dc1'):
+                if dienap_low1 is not None and dienap_low1 != 0  :
+                            self.dienap_low1 = dienap_low1
+                            if self.dienap_low1 < self.voltage_dc1 <= self.dienap_high:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc1_a70 = 0
+                              
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low <= self.voltage_dc1 <= self.dienap_low1:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc1_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc1_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                            else:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    }
+                                    # Apply styles to buttons
+                                    for button, style in button_styles.items():
+                                        button.setStyleSheet(style)
+                if dienap_low is not None and dienap_low != 0:
+                            self.dienap_low = dienap_low
+                            if self.dienap_low1 < self.voltage_dc1 <= self.dienap_high:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc1_a70 = 0
+                              
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low <= self.voltage_dc1 <= self.dienap_low1:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc1_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc1_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                            else:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    }
+                                    # Apply styles to buttons
+                                    for button, style in button_styles.items():
+                                        button.setStyleSheet(style)
+                if dienap_high is not None and dienap_high != 0:
+                        self.dienap_high = dienap_high
+                        if self.dienap_low1 < self.voltage_dc1 <= self.dienap_high:
+                            common_style = "background-color: rgb(0, 170, 0);"
+                            bit_dc1_a70 = 0
+                          
+                            button_styles = {
+                                self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                        elif self.dienap_low <= self.voltage_dc1 <= self.dienap_low1:
+                            common_style = "background-color: rgb(255, 255, 0);"
+                            bit_dc1_a70 = 1
+                            bit_coi=1
+                            button_styles = {
+                                self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                            
+                        else:
+                            common_style = "background-color: rgb(255, 0, 0);"
+                            bit_dc1_a70 = 1
+                            bit_coi=1
+                            button_styles = {
+                                self.ui.pushButton_dc1: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                        if bit_coi == 1:
+                            if client_address == tram70:
+                                common_style ="background-color:rgb(255,0,0);"
+                                button_styles = {
+                                    self.ui.pushButton_186: common_style ,
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    
+                                }
+                                self.apply_button_styles(button_styles)
+                        else:
+                            if client_address == tram70:
+                                common_style ="background-color:rgb(0,170,0);"
+                                button_styles = {
+                                    self.ui.pushButton_186: common_style ,
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                }
+                                # Apply styles to buttons
+                                for button, style in button_styles.items():
+                                    button.setStyleSheet(style)
+            if hasattr(self,"voltage_dc2"):                    
+                if dienap_low1 is not None and dienap_low1 != 0  :
+                            self.dienap_low1 = dienap_low1
+                            if self.dienap_low1 < self.voltage_dc2 <= self.dienap_high:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc2_a70 = 0
+                                
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low <= self.voltage_dc2 <= self.dienap_low1:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc2_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc2_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                            else:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    }
+                                    # Apply styles to buttons
+                                    for button, style in button_styles.items():
+                                        button.setStyleSheet(style)
+                if dienap_low is not None and dienap_low != 0:
+                            self.dienap_low = dienap_low
+                            if self.dienap_low1 < self.voltage_dc2 <= self.dienap_high:
+                                common_style = "background-color: rgb(0, 170, 0);"
+                                bit_dc2_a70 = 0
+                                
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            elif self.dienap_low <= self.voltage_dc2 <= self.dienap_low1:
+                                common_style = "background-color: rgb(255, 255, 0);"
+                                bit_dc2_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                    self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                                
+                            else:
+                                common_style = "background-color: rgb(255, 0, 0);"
+                                bit_dc2_a70 = 1
+                                bit_coi=1
+                                button_styles = {
+                                    self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                    self.ui.pushButton_186: common_style ,
+                                
+                                }
+                                self.apply_button_styles(button_styles)
+                            if bit_coi == 1:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                            else:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    }
+                                    # Apply styles to buttons
+                                    for button, style in button_styles.items():
+                                        button.setStyleSheet(style)
+                if dienap_high is not None and dienap_high != 0:
+                        self.dienap_high = dienap_high
+                        if self.dienap_low1 < self.voltage_dc2 <= self.dienap_high:
+                            common_style = "background-color: rgb(0, 170, 0);"
+                            bit_dc2_a70 = 0
+                            
+                            button_styles = {
+                                self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                        elif self.dienap_low <= self.voltage_dc2 <= self.dienap_low1:
+                            common_style = "background-color: rgb(255, 255, 0);"
+                            bit_dc2_a70 = 1
+                            bit_coi=1
+                            button_styles = {
+                                self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: "background-color: rgb(255, 0, 0);  border-radius: 15px;",
+                                self.ui.pushButton_canhbao: "background-color: rgb(255, 0, 0); border-radius: 17px;", 
+                                self.ui.pushButton_186: "background-color: rgb(255, 0, 0);", 
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                            
+                        else:
+                            common_style = "background-color: rgb(255, 0, 0);"
+                            bit_dc2_a70 = 1
+                            bit_coi=1
+                            button_styles = {
+                                self.ui.pushButton_dc2: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                self.ui.pushButton_186: common_style ,
+                            
+                            }
+                            self.apply_button_styles(button_styles)
+                        if bit_coi == 1:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(255,0,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                        
+                                    }
+                                    self.apply_button_styles(button_styles)
+                        else:
+                                if client_address == tram70:
+                                    common_style ="background-color:rgb(0,170,0);"
+                                    button_styles = {
+                                        self.ui.pushButton_186: common_style ,
+                                        self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+                                        self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+                                    }
+                                    # Apply styles to buttons
+                                    for button, style in button_styles.items():
+                                        button.setStyleSheet(style)
+
+
+
+                                        
+
+self.tableWidget_nhietdo_3 = QTableWidget(self.widget_273)
+        if (self.tableWidget_nhietdo_3.columnCount() < 4):
+            self.tableWidget_nhietdo_3.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        if (self.tableWidget_nhietdo_3.rowCount() < 9):
+            self.tableWidget_nhietdo_3.setRowCount(9)
+        font2 = QFont()
+        font2.setBold(True)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setFont(font2);
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(1, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(2, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(3, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(4, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(5, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(6, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(7, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.tableWidget_nhietdo_3.setVerticalHeaderItem(8, __qtablewidgetitem12)
+        self.tableWidget_nhietdo_3.setObjectName(u"tableWidget_nhietdo_3")
+        sizePolicy.setHeightForWidth(self.tableWidget_nhietdo_3.sizePolicy().hasHeightForWidth())
+        self.tableWidget_nhietdo_3.setSizePolicy(sizePolicy)
+        self.tableWidget_nhietdo_3.setMinimumSize(QSize(400, 0))
+        self.tableWidget_nhietdo_3.setAutoScrollMargin(16)
+        self.tableWidget_nhietdo_3.horizontalHeader().setVisible(True)
+        self.tableWidget_nhietdo_3.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_nhietdo_3.horizontalHeader().setMinimumSectionSize(20)
+        self.tableWidget_nhietdo_3.horizontalHeader().setDefaultSectionSize(111)
+        self.tableWidget_nhietdo_3.horizontalHeader().setProperty("showSortIndicator", True)
+        self.tableWidget_nhietdo_3.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget_nhietdo_3.verticalHeader().setVisible(False)
+        self.tableWidget_nhietdo_3.verticalHeader().setCascadingSectionResizes(False)
+        self.tableWidget_nhietdo_3.verticalHeader().setMinimumSectionSize(20)
+        self.tableWidget_nhietdo_3.verticalHeader().setDefaultSectionSize(30)
+
+        self.verticalLayout_175.addWidget(self.tableWidget_nhietdo_3)
+
+//////////////////////////////////////////////////////////////////////////////////suco_test/////////////////////////////////
+  # def check_condition_tram(self, client_address, param_name, alert_flag,bit_canh_bao_tram):
+    #     global bit_canh_bao_a45, bit_canh_bao_a70,bit_canh_bao_a01,bit_coi
+    #     if client_address == tram70:  
+    #         if bit_canh_bao_tram == 1:
+    #             bit_canh_bao_a70 = 1
+    #             bit_coi=1
+    #             self.ui.widget_99.setVisible(True)
+    #             common_style = "background-color: rgb(255, 0, 0);"
+    #             button_styles = {
+    #                 self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+    #                 self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_186: common_style
+    #             }
+    #             self.apply_button_styles(button_styles)
+    #         else:
+    #             self.ui.widget_99.setVisible(False) 
+    #             common_style = "background-color: rgb(0, 170, 0);"
+    #             button_styles = {
+    #                 self.ui.pushButton_anhsang_12: common_style + " border-radius: 15px;",
+    #                 self.ui.pushButton_canhbao: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_186: common_style
+    #             }
+    #             self.apply_button_styles(button_styles)
+    #             if ( bit_light_70 ==1 or bit_humi_a70 == 1 or bit_temp_a70 == 1 or bit_ac1_a70 == 1 or bit_ac2_a70 == 1 or bit_dc1_a70 == 1 or bit_dc2_a70 == 1 ):
+    #                 bit_coi = 1
+    #             else:
+    #             bit_coi = 0
+                
+
+    #     elif client_address == tram45:
+    #         if bit_canh_bao_tram == 1:
+    #             bit_canh_bao_a45 = 1
+    #             self.ui.widget_101.setVisible(True)
+    #             common_style = "background-color: rgb(255, 0, 0);"
+    #             button_styles = {
+    #                 self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+    #                 self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_188: common_style
+    #             }
+    #             self.apply_button_styles(button_styles)
+    #         else:
+    #             self.ui.widget_101.setVisible(False) 
+    #             common_style = "background-color: rgb(0, 170, 0);"
+    #             button_styles = {
+    #                 self.ui.pushButton_anhsang_13: common_style + " border-radius: 15px;",
+    #                 self.ui.pushButton_canhbao_2: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_188: common_style
+    #             }
+    #             self.apply_button_styles(button_styles)
+    #----------------------------------------------------------------
+    
+    # def canh_Bao_Tram01(self):
+    #     global bit_coi,bit_canh_bao_a01
+    #     current_time = datetime.datetime.now()
+    #     # Tính thời gian kể từ khi ứng dụng được khởi động
+    #     time_since_start = (current_time - self.start_time).total_seconds()
+    #     if time_since_start > 900:
+    #             self.ui.widget_102.setVisible(True)  # Hiển thị widget
+    #             common_style = "background-color: rgb(255, 0, 0);"
+    #             bit_coi = 1
+    #             bit_canh_bao_a01 =1
+    #             button_styles = {
+    #                 self.ui.pushButton_anhsang_14: common_style + " border-radius: 15px;",
+    #                 self.ui.pushButton_canhbao_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_nhietdo_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_doam_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_dc1_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_dc2_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_anhsang_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_ac2_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_ac1_6: common_style + " border-radius: 17px;",
+    #                 self.ui.pushButton_194: common_style
+    #                 }
+    #             self.apply_button_styles(button_styles)
+    #             return  
+    #     else:
+    #         self.ui.widget_102.setVisible(False)  # Ẩn widget
+    #         common_style = "background-color: rgb(0, 170, 0);"
+    #         bit_canh_bao_a01 =0 
+    #         button_styles = {
+    #             self.ui.pushButton_anhsang_14: common_style + " border-radius: 15px;",
+    #             self.ui.pushButton_canhbao_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_nhietdo_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_doam_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_dc1_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_dc2_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_anhsang_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_ac2_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_ac1_6: common_style + " border-radius: 17px;",
+    #             self.ui.pushButton_194: common_style
+    #         }
+    #         self.apply_button_styles(button_styles)

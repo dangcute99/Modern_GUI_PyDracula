@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/images/icon-1.ico</file>
+    <file>images/images/anh-cac-tram.jpg</file>
+    <file>images/images/anh-cac-tram-removebg-preview.png</file>
+    <file>images/images/logo.png</file>
+    <file>images/images/logo-binh-chung-thong-tin-lien-lac.png</file>
+    <file>images/images/Screenshot 2023-11-01 001714.png</file>
+    <file>images/images/Screenshot 2023-11-01 001728.png</file>
+    <file>images/images/Screenshot 2023-11-01 002148.png</file>
+    <file>images/images/Screenshot 2023-11-01 002415.png</file>
+    <file>images/images/Screenshot 2024-03-20 203853.png</file>
+    <file>images/images/Screenshot 2024-03-23 183552.png</file>
+    <file>images/images/Screenshot 2024-03-23 194434.png</file>
+    <file>images/images/Screenshot 2024-03-23 194441.png</file>
+    <file>images/images/Screenshot 2024-03-23 205032.png</file>
+    <file>images/images/Screenshot 2024-03-23 205243.png</file>
+    <file>images/images/Screenshot 2024-03-23 205346.png</file>
+  </qresource>
+</RCC>
